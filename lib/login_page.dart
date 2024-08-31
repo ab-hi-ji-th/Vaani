@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // Import the HomePage
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,12 +19,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // Add gradient background
+
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Color(0xFF9CB2E4).withOpacity(0.6),
-              Color(0xFF9CB2E4).withOpacity(0.1), // Lighter variation of the same color
+              Color(0xFF9CB2E4).withOpacity(0.1),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                     suffixIcon: IconButton(
                       icon: Icon(
                         _obscureText ? Icons.visibility : Icons.visibility_off,
-                        color: Colors.grey, // Set the color to grey
+                        color: Colors.grey,
                       ),
                       onPressed: _togglePasswordView,
                     ),
@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 20.0),
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to HomePage on sign in
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => HomePage()),
@@ -116,14 +116,14 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'Sign In',
                     style: TextStyle(
-                      color: Colors.white, // Set text color to white for contrast
+                      color: Colors.white,
                       fontFamily: 'IBMPlexMono',
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF9575CD).withOpacity(0.70), // Set button color with 70% opacity
+                    backgroundColor: Color(0xFF9575CD).withOpacity(0.70),
                     padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
@@ -137,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text('New here?', style: TextStyle(fontFamily: 'IBMPlexMono', color: Colors.black54),),
                     TextButton(
                       onPressed: () {
-                        // Handle create account action
+
                       },
                       child: Text('Create a new account', style: TextStyle(fontFamily: 'IBMPlexMono', color: Colors.black54),),
                     ),
@@ -145,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Handle forgot password action
+
                   },
                   child: Text('Forgot your password?', style: TextStyle(fontFamily: 'IBMPlexMono', color: Colors.black54),),
                 ),

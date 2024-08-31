@@ -35,15 +35,15 @@ class TextToSignPage extends StatelessWidget {
                   ),
                 ),
                 child: AppBar(
-                  backgroundColor: Colors.transparent, // Transparent AppBar
-                  elevation: 0, // Remove shadow
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
                   leading: IconButton(
                     icon: CircleAvatar(
                       backgroundColor: Colors.white,
                       child: Icon(Icons.menu, color: Color(0xFF3B4F7D)),
                     ),
                     onPressed: () {
-                      Navigator.pop(context); // Handle navigation
+                      Navigator.pop(context);
                     },
                   ),
                 ),
@@ -55,7 +55,7 @@ class TextToSignPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Search bar with blurred edges
+
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -63,8 +63,8 @@ class TextToSignPage extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.2),
-                              blurRadius: 16, // Increase blur radius
-                              spreadRadius: 4, // Slight spread for a softer edge
+                              blurRadius: 16,
+                              spreadRadius: 4,
                               offset: Offset(0, 4),
                             ),
                           ],
@@ -74,7 +74,7 @@ class TextToSignPage extends StatelessWidget {
                             hintText: 'Enter Search',
                             prefixIcon: Icon(Icons.search),
                             filled: true,
-                            fillColor: Colors.transparent, // Make fill color transparent to show box shadow
+                            fillColor: Colors.transparent,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(16),
                               borderSide: BorderSide.none,
@@ -84,7 +84,7 @@ class TextToSignPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      // Buttons with blurred edges
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -98,15 +98,15 @@ class TextToSignPage extends StatelessWidget {
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black.withOpacity(0.2),
-                                      blurRadius: 16, // Increase blur radius
-                                      spreadRadius: 4, // Slight spread for a softer edge
+                                      blurRadius: 16,
+                                      spreadRadius: 4,
                                       offset: Offset(0, 4),
                                     ),
                                   ],
                                 ),
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    // Handle Detect action
+
                                   },
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Color(0xFF9574CD),
@@ -114,8 +114,8 @@ class TextToSignPage extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(16),
                                     ),
-                                    padding: EdgeInsets.symmetric(vertical: 16), // Increase height
-                                    elevation: 0, // Remove default elevation
+                                    padding: EdgeInsets.symmetric(vertical: 16),
+                                    elevation: 0,
                                   ),
                                   child: Text(
                                     'Detect',
@@ -138,15 +138,15 @@ class TextToSignPage extends StatelessWidget {
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black.withOpacity(0.2),
-                                      blurRadius: 16, // Increase blur radius
-                                      spreadRadius: 4, // Slight spread for a softer edge
+                                      blurRadius: 16,
+                                      spreadRadius: 4,
                                       offset: Offset(0, 4),
                                     ),
                                   ],
                                 ),
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    // Handle Refresh action
+
                                   },
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Color(0xFF9574CD),
@@ -154,8 +154,8 @@ class TextToSignPage extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(16),
                                     ),
-                                    padding: EdgeInsets.symmetric(vertical: 16), // Increase height
-                                    elevation: 0, // Remove default elevation
+                                    padding: EdgeInsets.symmetric(vertical: 16),
+                                    elevation: 0,
                                   ),
                                   child: Text(
                                     'Refresh',
@@ -206,8 +206,8 @@ class TextToSignPage extends StatelessWidget {
               label: '', // Empty label
             ),
           ],
-          selectedItemColor: Color(0xFF3B4F7D), // Change the selected item color if needed
-          unselectedItemColor: Colors.grey, // Change the unselected item color if needed
+          selectedItemColor: Color(0xFF3B4F7D),
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'text_to_sign.dart'; // Make sure this import points to your TextToSignPage
+import 'text_to_sign.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                     child: Icon(Icons.menu, color: Color(0xFF3B4F7D)),
                   ),
                   onPressed: () {
-                    // Add your drawer or navigation logic here
+
                   },
                 ),
               ),
@@ -70,31 +70,31 @@ class HomePage extends StatelessWidget {
                             buildCard(
                               'IMAGE TO SIGN',
                                   () {
-                                // Add navigation for 'IMAGE TO SIGN'
+
                               },
                             ),
                             buildCard(
                               'VOICE TO SIGN',
                                   () {
-                                // Add navigation for 'VOICE TO SIGN'
+
                               },
                             ),
                             buildCard(
                               'SIGN TO TEXT',
                                   () {
-                                // Add navigation for 'SIGN TO TEXT'
+
                               },
                             ),
                             buildCard(
                               'OBJECT DETECTION',
                                   () {
-                                // Add navigation for 'OBJECT DETECTION'
+
                               },
                             ),
                             buildCard(
                               'CHATBOT - ASK ME',
                                   () {
-                                // Add navigation for 'CHATBOT - ASK ME'
+
                               },
                             ),
                           ],
@@ -158,14 +158,14 @@ class HomePage extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
-              // Shadow for top and left edges
+
               BoxShadow(
                 color: Colors.white.withOpacity(0.8),
                 blurRadius: 10,
                 spreadRadius: 2,
                 offset: Offset(-3, -3),
               ),
-              // Shadow for bottom and right edges
+
               BoxShadow(
                 color: Color(0xFFBBC3CE).withOpacity(0.40),
                 blurRadius: 8,
