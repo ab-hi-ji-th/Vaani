@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
@@ -8,7 +9,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _obscureText = true;
-
+  final TextEditingController emailediting = TextEditingController();
+  final TextEditingController passediting = TextEditingController();
   void _togglePasswordView() {
     setState(() {
       _obscureText = !_obscureText;
@@ -76,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20.0),
                 TextFormField(
+                  controller: emailediting,
                   decoration: InputDecoration(
                     labelText: 'Email',
                     hintText: 'Enter your email',
@@ -88,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 10.0),
                 TextFormField(
                   obscureText: _obscureText,
+                  controller: passediting,
                   decoration: InputDecoration(
                     labelText: 'Password',
                     hintText: 'Enter your password',
@@ -106,7 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20.0),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async{
+                    await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailediting.text, password: passediting.text);
 
                     Navigator.push(
                       context,

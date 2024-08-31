@@ -25,7 +25,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       body: Center(
         child: Image.asset(
-          'assets/your_image.png', // Replace with your image path
+          'assets/google-logo.png', // Replace with your image path
           width: 150, // Adjust the size as needed
           height: 150,
           fit: BoxFit.contain,
