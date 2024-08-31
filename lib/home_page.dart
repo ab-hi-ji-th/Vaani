@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vani/pages/camerapage.dart';
+import 'package:vani/pages/chatbot.dart';
+import 'package:vani/pages/liveaudio.dart';
+import 'package:vani/pages/sign.dart';
+import 'package:vani/pages/tits.dart';
 import 'text_to_sign.dart';
 
 class HomePage extends StatelessWidget {
@@ -62,27 +67,42 @@ class HomePage extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => TextToSignPage(),
+                                    builder: (context) => TextInputToSign(),
                                   ),
                                 );
                               },
                             ),
                             buildCard(
-                              'IMAGE TO SIGN',
+                              'LIVE VOICE TO SIGN',
                                   () {
-
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => SpeechToSign(),
+                                      ),
+                                    );
                               },
                             ),
                             buildCard(
-                              'VOICE TO SIGN',
+                              'AUDIO TO SIGN',
                                   () {
-
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => TextToSign(),
+                                      ),
+                                    );
                               },
                             ),
                             buildCard(
                               'SIGN TO TEXT',
                                   () {
-
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => CameraPage(),
+                                      ),
+                                    );
                               },
                             ),
                             buildCard(
@@ -94,7 +114,12 @@ class HomePage extends StatelessWidget {
                             buildCard(
                               'CHATBOT - ASK ME',
                                   () {
-
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => CodeLlamaChatPage(),
+                                      ),
+                                    );
                               },
                             ),
                           ],
