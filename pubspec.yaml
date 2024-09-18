@@ -40,6 +40,7 @@ dependencies:
   deepgram_speech_to_text: ^2.3.2
   file_picker: ^8.1.2
   speech_to_text: ^7.0.0
+  
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -75,6 +76,7 @@ flutter:
      - assets/google-logo.png
      - assets/twitter-logo.png
      - assets/hand_signs/
+     - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

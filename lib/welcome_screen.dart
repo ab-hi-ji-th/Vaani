@@ -12,10 +12,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   void initState() {
     super.initState();
 
-    // Navigate to the next screen after 1.5 seconds
+
     Future.delayed(Duration(seconds: 1, milliseconds: 500), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => LoginPage()), // Replace with your next screen
+        MaterialPageRoute(builder: (context) => LoginPage()),
       );
     });
   }
@@ -23,26 +23,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Image.asset(
-          'assets/google-logo.png', // Replace with your image path
-          width: 150, // Adjust the size as needed
-          height: 150,
+          'assets/vaani-logo.jpg',
+          width: 200,
+          height: 200,
           fit: BoxFit.contain,
         ),
-      ),
-    );
-  }
-}
-
-// Example of the next screen
-class NextScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Next Screen')),
-      body: Center(
-        child: Text('Welcome to the Next Screen!'),
       ),
     );
   }

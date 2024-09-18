@@ -65,6 +65,7 @@ class _TextInputToSignState extends State<TextInputToSign> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           // Background gradient
