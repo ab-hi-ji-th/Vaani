@@ -52,7 +52,7 @@ class _CameraPageState extends State<CameraPage> {
       final image = await _controller!.takePicture();
       final request = http.MultipartRequest(
         'POST',
-        Uri.parse('http://10.12.78.30:8000/predict'),
+        Uri.parse('http://192.168.1.15:8000/predict'),
       );
       request.files.add(await http.MultipartFile.fromPath('file', image.path));
 

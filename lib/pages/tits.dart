@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:vani/componenets/constant.dart';
 
 class TextInputToSign extends StatefulWidget {
   const TextInputToSign({super.key});
@@ -9,6 +10,7 @@ class TextInputToSign extends StatefulWidget {
 }
 
 class _TextInputToSignState extends State<TextInputToSign> {
+  final timecontroller = TextEditingController();
   String _text = "";
   String _filteredText = "";
   int _currentLetterIndex = 0;
@@ -19,7 +21,7 @@ class _TextInputToSignState extends State<TextInputToSign> {
   Future<void> _displayHandSigns() async {
     _isPlaying = true;
     _isPaused = false;
-    _timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
+    _timer = Timer.periodic(Duration(milliseconds: time), (Timer timer) {
       setState(() {
         if (!_isPaused) {
           if (_currentLetterIndex < _filteredText.length - 1) {
@@ -118,7 +120,7 @@ class _TextInputToSignState extends State<TextInputToSign> {
                   },
                 ),
               ),
-              Expanded(
+              SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
@@ -250,43 +252,66 @@ class _TextInputToSignState extends State<TextInputToSign> {
                   ),
                 ),
               ),
+              SizedBox(height: 30,),
+                Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Change Image Render Speed',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF3B4F7D),
+                                fontFamily: 'IBMPlexMono',
+                              ),
+                            ),
+                            SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12),
+                      overlayShape: RoundSliderOverlayShape(overlayRadius: 23),
+                      overlayColor: Color(0x29EB1555),
+                      activeTrackColor: Colors.white,
+                      inactiveTickMarkColor: Color(0xFF8D8E98),
+                      thumbColor: Color(0xFFEB1555),
+                    ),
+                    child: Slider(
+                      value: time.toDouble(),
+                      min: 100,
+                      max: 2000,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          time = newValue.round();
+                          timecontroller.text = time.toString();
+                        });
+                      },
+                    ),
+                  ),
+                  TextFormField(
+                              controller: timecontroller,
+                              readOnly: true,
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor: Colors.white,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                                contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              ),
+                              
+                            ),
+                          ],
+                        ),
+                      ),
             ],
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Color(0xFFDCE4F8),
-          borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 8,
-              offset: Offset(0, -2),
-            ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: '', // Empty label
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: '', // Empty label
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: '', // Empty label
-            ),
-          ],
-          selectedItemColor: Color(0xFF3B4F7D),
-          unselectedItemColor: Colors.grey,
-        ),
-      ),
-    );
+    
+      );
+    
   }
 
   Widget _buildHandSign() {

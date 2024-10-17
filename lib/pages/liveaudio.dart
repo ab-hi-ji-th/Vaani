@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'dart:async';
 
+import 'package:vani/componenets/constant.dart';
+
 class SpeechToSign extends StatefulWidget {
   const SpeechToSign({super.key});
 
@@ -10,6 +12,7 @@ class SpeechToSign extends StatefulWidget {
 }
 
 class _SpeechToSignState extends State<SpeechToSign> {
+  final timecontroller = TextEditingController();
   late stt.SpeechToText _speech;
   bool _isListening = false;
   String _text = "Press the button and start speaking";
@@ -59,7 +62,7 @@ class _SpeechToSignState extends State<SpeechToSign> {
 
   void _startDisplayTimer() {
     _timer?.cancel();
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(Duration(milliseconds: time), (timer) {
       if (_currentLetterIndex < _displayedText.length && _isPlaying) {
         setState(() {
           _currentLetterIndex++;
@@ -304,6 +307,59 @@ class _SpeechToSignState extends State<SpeechToSign> {
                     ),
                   ],
                 ),
+                SizedBox(height: 30,),
+                Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Change Image Render Speed',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF3B4F7D),
+                                fontFamily: 'IBMPlexMono',
+                              ),
+                            ),
+                            SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12),
+                      overlayShape: RoundSliderOverlayShape(overlayRadius: 23),
+                      overlayColor: Color(0x29EB1555),
+                      activeTrackColor: Colors.white,
+                      inactiveTickMarkColor: Color(0xFF8D8E98),
+                      thumbColor: Color(0xFFEB1555),
+                    ),
+                    child: Slider(
+                      value: time.toDouble(),
+                      min: 100,
+                      max: 2000,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          time = newValue.round();
+                          timecontroller.text = time.toString();
+                        });
+                      },
+                    ),
+                  ),
+                  TextFormField(
+                              controller: timecontroller,
+                              readOnly: true,
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor: Colors.white,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                                contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              ),
+                              
+                            ),
+                          ],
+                        ),
+                      ),
               ],
             ),
           ),

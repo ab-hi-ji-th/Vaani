@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vani/componenets/constant.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class _ProfilePageState extends State<ProfilePage> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final timecontroller = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   String _selectedCountry = 'Select Country';
 
@@ -293,6 +295,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                 ),
+                
+                
+                
               ],
             ),
           ],
