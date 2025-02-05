@@ -1,16 +1,22 @@
-# vani
+# Vaani
+BRIDGING COMMUNICATION BETWEEN SPOKEN LANGUAGE AND ISL
 
-A new Flutter project.
+## Key Features:
 
-## Getting Started
+Sign-to-Text : Convert ISL gestures into text.
 
-This project is a starting point for a Flutter application.
+Image-to-Text : Recognize signs from images and convert them to text.
 
-A few resources to get you started if this is your first Flutter project:
+Audio-to-Text : Transcribe spoken language into text, then convert to ISL.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Text-to-Sign : Translate written text into ISL.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Sign Language Chatbot : Takes ISL as input, provides output in ISL with captions.
+
+## Tech Stack
+
+Frontend- Flutter & Dart
+
+Backend- Python, Flask &Tensorflow
+
+Database- Firebase
